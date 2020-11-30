@@ -9,7 +9,7 @@ export default class App extends React.Component{
   constructor(props){
     super(props)
     this.state = {
-      markdown: placeholder,
+      preview: placeholder,
     
     }
   }
@@ -17,63 +17,57 @@ export default class App extends React.Component{
 
   handleChange(text){
     this.setState({
-      markdown: text,
+      preview: text,
     })
   }
 
   render(){
     return (
       <div className="App">
-        <Editor markdown={this.state.markdown} onChange={(e)=>{this.handleChange(e.target.value)}} />
-        
-        <Preview markdown={this.state.markdown} />
-        
+        <h1>Markdown Previewer</h1>
+        <div className='previewer'>
+          <Editor markdown={this.state.preview} onChange={(e)=>{this.handleChange(e.target.value)}} />
+          <Preview markdown={this.state.preview} />
+        </div>
       </div>
     );
   }
 }
 
-const placeholder = `# Welcome to my React Markdown Previewer!
+const placeholder = 
+`# Hello!
 
-## This is a sub-heading...
-### And here's some other cool stuff:
+## This is a Markdown previewer  
 
-Heres some code, \`<div></div>\`, between 2 backticks.
+### Check out what you can do
 
+- You can make lists
+1. And there are numbererd lists too.
+1. two
+1. three
+
+create code
+- backticks \`<p>Hi</p>\`
+- <pre><code>Cool</code></pre>
+- <code>I'm inside a code tag</code>
+- Block Code below 
 \`\`\`
-// this is multi-line code:
-
-function anotherExample(firstLine, lastLine) {
-  if (firstLine == '\`\`\`' && lastLine == '\`\`\`') {
-    return multiLineCode;
-  }
+function test() {
+  console.log("that is a lot of backticks");
 }
 \`\`\`
 
-You can also make text **bold**... whoa!
-Or _italic_.
-Or... wait for it... **_both!_**
-And feel free to go crazy ~~crossing stuff out~~.
 
-There's also [links](https://www.freecodecamp.com), and
-> Block Quotes!
+Play with fonts. Go **Bold!** Or _italic!_ Or **_Both_**
 
-And if you want to get really crazy, even tables:
+add block quotes
+ >like this!
 
-Wild Header | Crazy Header | Another Header?
------------- | ------------- | -------------
-Your content can | be here, and it | can be here....
-And here. | Okay. | I think we get it.
+add links, 
+- learn more about [Markdown here](https://www.markdownguide.org/getting-started/)
 
-- And of course there are lists.
-  - Some are bulleted.
-     - With different indentation levels.
-        - That look like this.
+add cute images 
 
+![lizard](https://lh3.googleusercontent.com/proxy/M1mCNNAGeJlkGy9lx0VrWBG6RDihbJCXYYh1UPsCxBqWVOWU7lCncUMf9PjlQe756L1LszJM0svX3lzG7kHtWI6IlO26kXIS95YwgqtGe3_6JJ5Soazk4h0)
 
-1. And there are numbererd lists too.
-1. Use just 1s if you want!
-1. And last but not least, let's not forget embedded images:
-
-![React Logo w/ Text](https://goo.gl/Umyytc)
 `
