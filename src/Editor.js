@@ -1,5 +1,4 @@
 import React from 'react'
-import marked from 'marked'
 
 export default function Editor(props){
     return(

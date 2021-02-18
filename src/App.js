@@ -10,11 +10,9 @@ export default class App extends React.Component{
     super(props)
     this.state = {
       preview: placeholder,
-    
     }
   }
   
-
   handleChange(text){
     this.setState({
       preview: text,
@@ -42,7 +40,7 @@ const placeholder =
 ### Check out what you can do
 
 - You can make lists
-1. And there are numbererd lists too.
+1. And there are numbered lists too.
 1. two
 1. three
 
@@ -68,6 +66,6 @@ add links,
 
 add cute images 
 
-![lizard](https://lh3.googleusercontent.com/proxy/M1mCNNAGeJlkGy9lx0VrWBG6RDihbJCXYYh1UPsCxBqWVOWU7lCncUMf9PjlQe756L1LszJM0svX3lzG7kHtWI6IlO26kXIS95YwgqtGe3_6JJ5Soazk4h0)
+![start](https://clipart.info/images/ccovers/1495916678star-png-red-small-alpha-transparent-image-clip-art.png)
 
 `
